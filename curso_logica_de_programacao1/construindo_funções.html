@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construindo Funções</title>
+</head>
+<body>
+    
+<script>
+var titulo = "Bem-vindo ao meu programa!";
+
+function pulaLinha() {
+    document.write("<br><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+function mensagem(parabens) {
+            alert("Parabéns " + parabens + ", você foi aprovado!");
+        }
+
+var a = prompt("Digite o seu nome na caixa abaixo:");
+mensagem(a);
+
+mostra("Olá Mundo!");
+
+mostra("Estou aqui de novo");
+
+
+</script>
+
+
+</body>
+</html>

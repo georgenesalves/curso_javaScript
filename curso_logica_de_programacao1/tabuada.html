@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABUADA</title>
+</head>
+<body>
+
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+       mostra("<h2>Tabuada de Multiplicação</h2>");
+
+       //7*1 = 7
+       //7*2 = 14
+       //7*3 = 21
+       /*var mult = 1;
+       var n = parseInt(prompt("Digite um número de 1 a 9"))
+       while( mult <=9){
+           mostra("A tabuada de multiplicação de " + n +"vezes " + mult + " é :" + (n * mult))
+           mult = mult + 1
+       }*/
+
+       var n = parseInt(prompt("Digite um número de 1 a 9"))
+       for(var mult = 1; mult <=9; mult++){
+        mostra("A tabuada de multiplicação de " + n +"<strong>X</strong> " + mult + " é :" + (n * mult))
+       }
+       mostra("FIM")
+
+    </script>
+    
+</body>
+</html>

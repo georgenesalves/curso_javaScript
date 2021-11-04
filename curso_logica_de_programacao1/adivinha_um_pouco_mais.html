@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Tente Adivinhar</h1>
+	<input/>
+	<button><strong>Clique Aqui</strong></button>
+
+	<script>
+
+		function sorteia (){
+			return Math.round(Math.random()*10); 
+		} /*a função sorteia só será executada quando for chamada. E quando for chamada, executará a instrução que está no seu bloco, retornando um valor de um numero aleatório.*/
+
+		function sorteiaNumeros (quantidade){
+			var segredos = [];
+			var numero = 1;
+			while (numero<=quantidade){
+
+				var numeroAleatorio = sorteia();
+				if(numeroAleatorio !== 0){
+					var achou = false;
+
+					for(var posicao = 0; posicao<segredos.length; posicao++){
+						if(segredos[posicao] == numeroAleatorio){
+							achou = true;
+							break;
+						}				
+					}
+						if(achou == false){
+						segredos.push(numeroAleatorio);
+						numero++
+						}
+				
+				}				
+			} 
+			return segredos;
+			} /*nessa nova função, serão inseridos todos os números que forem determinados dentro do Array, através do .push que receberá a função sorteia tantas vezes quantas determinadas. */
+
+			var segredos = sorteiaNumeros (5);
+			
+			console.log(segredos);
+			
+			var input = document.querySelector("input");
+			var buton = document.querySelector("button");
+			input.focus();
+
+			function verifica () {
+
+			var compara = false
+			for(var posicao = 0; posicao < segredos.length; posicao++){			
+			if(input.value == segredos[posicao]){
+				alert("Você ACERTOU!");
+				compara = true
+				break;				
+				}
+			}
+			if(compara == false){
+			alert("Você ERROU !!!")				
+			}
+			input.value = "";
+			input.focus();
+		}
+
+		buton.onclick = verifica;
+
+
+	</script>
+</body>

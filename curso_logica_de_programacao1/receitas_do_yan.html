@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas do Yan</title>
+</head>
+<body>
+     <h1><strong>Receitas do Yan</strong></h1>
+
+    <script>        
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function totalDeIngredientes (quantidade){ /* Criada a função totalDeIngredientes com um parâmetro definido por uma variável que será definido pelo usuário mais abaixo.*/
+            /* A descrição da instrução da função fica dentro das chaves.*/
+            var ingredientes = []; //Criada a array com a lista vazia para receber os .pushs gerados no while.
+            var contador = 1; /* Criado a variável contador que recebe o número 1 que será comparado com a quantidade de ingredientes fornecido pelo usuário.*/
+            while( contador <= quantidade) {/*contador se compara com a quantidade de ingredientes fornecida pelo usuário.*/
+                 ingrediente = prompt("Informe o ingrediente " + contador); /*var igrediente recebe a informação do ingrediente fornecido pelo usuário.*/
+
+                 var compara = false
+
+                 for(var posicao = 0; posicao<ingredientes.length; posicao++){ /*Faz a verificação dentro dos itens do array e, caso seja repetido (==), não executa a instrução.*/
+						if(ingredientes[posicao] == ingrediente){
+                            compara = true;
+							break;
+                        }
+                        }
+                if(compara == false){
+                    ingredientes.push(ingrediente);  /* Executa o acréscimo do ingrediente dentro do array, caso o ingrediente não seja repetido (false).*/  
+                    contador++  /*contador é pós incrementado antes de iniciar um novo loop que será comparado novamente com a quantidade de ingredientes informado pelo usuário.*/ 
+                }                                              
+            }
+            return ingredientes; /* Os ingredientes informados e lançados dentro do array são guardados na variável ingredientes para mostrar quando solicitado.*/                          
+        }
+                
+        var ingredientes = totalDeIngredientes(parseInt(prompt("Quantos ingredientes você vai adicionar?"))); /*Criada uma variável que recebe a execução da função totalDeIngredientes criada acima onde é solicitado ao usuário para fornecer o parâmetro de quantidade de ingredientes.*/
+
+        document.write(ingredientes);
+
+        console.log(ingredientes);
+</script>
+    
+</body>
+</html>

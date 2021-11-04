@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Dos Eventos</title>
+
+</head>
+<body>
+    
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();}  
+            
+            var quantEventos = parseInt(prompt("Digite a quantidade de enventos no mês."));  
+            var contador = 1          
+            totalDeGastos = 0
+
+            while(contador<=quantEventos){
+                var gastoDoEvento = parseInt(prompt("Informe o total gasto no evento."));
+                totalDeGastos = totalDeGastos + gastoDoEvento;
+                contador++                
+            }
+
+            var mediaDeGastos = totalDeGastos/quantEventos;
+            mostra("A média dos gastos com eventos é de " + mediaDeGastos)
+
+
+            /*for(var contador = 1; contador <= quantEventos; contador++){                
+                var gastoDoEvento = parseInt(prompt("Informe o total gasto no evento."));
+                totalDeGastos = totalDeGastos + gastoDoEvento;
+            }
+
+            var mediaDeGastos = totalDeGastos/quantEventos;
+            mostra("A média dos gastos com eventos é de " + mediaDeGastos.n1.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}) + "reais")*/
+
+            
+
+    </script>
+    
+</body>
+</html>

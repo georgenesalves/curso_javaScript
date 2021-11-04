@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Adivinha</title>
+</head>
+<body>
+    <--Texto simplificado
+        Criar um programa que sorteia números aleatórios que serão pushados para dentro de um array, onde o usuário pode fazer um chute e o programa vai comparar com os números do array e vai devolver uma mensagem para o usuário se ele acertou ou errou.
+
+        Descrição da Lógica dentro do js
+        Criar uma função sorteia que retorna a instrução Math.random (função que gera um número aleatório).
+        Criar o array segredos = [] com a sua lista vazia, já que serão acrescentados através de outra função abaixo.
+        Criar a função while contendo a condição da quantidade do loop, para determinar os .pushs que serão feitos para dentro do array.
+        Criar uma condição dentro do while que identifique o número igual a zero. Se o número for !== de zero, então a var achou será false.
+    
+    
+    -->
+
+
+        
+    
+    <h1>Tente Adivinhar</h1>
+	<input/>
+	<button><strong>Clique Aqui</strong></button>
+
+	<script>
+
+		function sorteia (){
+			return Math.round(Math.random()*10); 
+		} /*a função sorteia só será executada quando for chamada. E quando for chamada, executará a instrução que está no seu bloco, retornando um valor de um numero aleatório.*/
+
+		function sorteiaNumeros (quantidade){ /*função sorteiNumeros recebe um parametro (quantidade) que será definido pela variável segredos lá em baixo. A variável segredos recebe a função sorteiaNumeros e define a quantidade de números para serem sorteados*/
+			var segredos = [];
+			var numero = 1;
+			while (numero<=quantidade){
+
+				var numeroAleatorio = sorteia();
+				if(numeroAleatorio !== 0){ // Se o math.random for diferente de zero, a variável achou recebe o valor boolean de false.
+					var achou = false;
+
+					for(var posicao = 0; posicao<segredos.length; posicao++){
+						if(segredos[posicao] == numeroAleatorio){
+							achou = true;
+							break;
+						}				
+					}
+						if(achou == false){
+						segredos.push(numeroAleatorio);
+						numero++
+						}
+				
+				}				
+			} 
+			return segredos;
+			} /*nessa nova função, serão inseridos todos os números que forem determinados dentro do Array, através do .push que receberá a função sorteia tantas vezes quantas determinadas. */
+
+			var segredos = sorteiaNumeros (prompt("Digite a quantidade de números que vc quer que seja sorteado."));/* O número pode ser indicado pelo usuário caso seja solicitado pelo prompt()*/
+			
+			console.log(segredos);
+			
+			var input = document.querySelector("input");
+			var buton = document.querySelector("button");
+			input.focus();
+
+			function verifica () {
+			var compara = false
+			for(var posicao = 0; posicao < segredos.length; posicao++){			
+			if(input.value == segredos[posicao]){
+				alert("Você ACERTOU!");
+				compara = true
+				break;				
+				}
+			}
+			if(compara == false){
+			alert("Você ERROU !!!")				
+			}
+			input.value = "";
+			input.focus();
+		}
+
+		buton.onclick = verifica;
+
+
+	</script>
+</body>
+</html>

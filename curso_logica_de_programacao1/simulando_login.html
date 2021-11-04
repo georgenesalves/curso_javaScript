@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulando a tela de login</title>
+</head>
+<body>
+    <script>
+      
+        var loginCadastrado = "alura";
+        var senhaCadastrada = "alura321";        
+
+        /*var tentativaAtual = 1;
+
+        while (tentativaAtual <= 3) {
+
+            var loginInformado = prompt("Informe seu login");
+            var senhaInformada = prompt("Informe sua senha");
+            
+            if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+                alert("Bem-vindo ao sistema, " + loginInformado);
+            tentativaAtual = 3;       
+            }else{
+                if(tentativaAtual==3){
+                    alert("Número permitido de tentativas ultrapassado");
+                }else{
+                alert("Login inválido, tente novamente.");        
+                }        
+            }
+            tentativaAtual++; 
+    }   */    
+        for(var contador=1; contador<=3;contador++){
+            var loginInformado = prompt("Informe seu login");
+            var senhaInformada = prompt("Informe sua senha");
+            if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema, " + loginInformado);
+            contador = 3;
+            if(contador==3){break}
+            }  
+            if(contador==3){
+                alert("Número permitido de tentativas ultrapassado")
+            } else {
+                alert("Login inválido. Tente novamente.")
+            }    
+            
+
+        }
+        
+      
+    </script>
+        
+
+</body>
+</html>

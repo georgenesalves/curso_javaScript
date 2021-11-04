@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicar Números</title>
+</head>
+<body>
+
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+      
+        var a = parseInt(prompt("digite um número qualquer"));
+        var b = parseInt(prompt("Digite outro número"));    
+
+        function calculaMultiplica(a, b) {
+            var resultado = a * b;
+            mostra("O resultado da multiplicação dos dois número é: " + resultado);         
+        }
+        calculaMultiplica(a,b);
+
+
+    </script>
+    
+</body>
+</html>
+   
+   
+    
