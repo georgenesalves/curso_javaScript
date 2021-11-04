@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com DOM</title>
+    <style>
+        body{
+            background-color: rgba(71, 124, 149, 0.856);
+            color: white;
+        font: normal 18pt Arial    
+    }
+    div#area {
+        font: normal 18pt Arial;
+        background-color: rgb(117, 50, 50);
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos com o <strong>DOM</strong></h1>
+    <P>Aqui vai o resultado.</P>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="area" onclick="clicar()">Clique em mim</div>
+
+
+    <script>
+        function clicar(){
+            let alterar = document.querySelector('div');
+            alterar.innerText = "Clicou!"
+        }
+
+        /*Quando é para acessar um elemento dentro do html, utilizo o getElements ou o 'querySelector'  e quando preciso acessar todo uma parte do documento como por exemplo o body crio uma var var corpo = document.body */
+        var corpo = document.body
+        //corpo.style.background = 'green'
+
+        let p1 = document.getElementsByTagName('p')[1]
+        //window.document.write("Está escrito assim: " + p1.innerText)
+        //p1.style.color = 'blue'
+        //window.alert(p1.innerText)
+        //p1.style.background = 'green' //background é o que tem por trás do texto. Style é o stilo de css.
+        //p1.innerText = 'Estou aguardando...'
+        let minhaDive = document.querySelector('div')
+        //minhaDive.style.background = 'blue'
+        
+
+    </script>
+    
+</body>
+</html>
